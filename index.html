@@ -16,6 +16,13 @@
       box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
       margin-top: 20px;
     }
+    input {
+      padding: 10px;        /* 给字一点空间 */
+      border-radius: 5px;   /* 圆角 */
+      border: 1px solid #ccc; /* 浅灰色边框 */
+      font-size: 16px;      /* 字大一点 */
+      margin-right: 10px;   /* 让它和旁边的按钮保持距离，别挤在一起 */
+    }
     button {
       background-color: #ff6b6b;
       color: white;
@@ -33,7 +40,7 @@
 
 <body>
 
-  <h1>Hello World! 这是我的第一个网页</h1>
+  <h1 id="main-title">Hello World! 这是我的第一个网页</h1>
   
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/300px-Cat_November_2010-1a.jpg" alt="一只可爱的猫">
 
@@ -48,11 +55,25 @@
     <li>撸猫 🐱</li>
   </ul>
 
-  <button onclick="sayHello()">点赞 👍</button>
+  <input type="text" id="name-input" placeholder="请输入你的名字">
+
+  <button onclick="sayHi()">打个招呼 👋</button>
 
   <script>
-    function sayHello() {
-      alert("喵！🐱 谢谢你的点赞！");
+    function sayHi() {
+      // 1. 找到那个输入框
+      var nameInput = document.getElementById("name-input");
+      
+      // 2. 拿出框里写的字 (这一步叫取 value)
+      var name = nameInput.value;
+      
+      // 3. 既然我们要变得更聪明，先判断一下用户有没有真的写名字
+      if (name === "") {
+        alert("哎呀，你还没告诉我你叫什么呢！");
+      } else {
+        // 4. 拼凑一句欢迎语，并修改大标题
+        document.getElementById("main-title").innerText = "你好，" + name + "！欢迎来到全栈世界 🌍";
+      }
     }
   </script>
 
