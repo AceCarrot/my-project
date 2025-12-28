@@ -77,13 +77,34 @@
       newItem.style.marginBottom = "10px";
       newItem.style.borderRadius = "5px";
       newItem.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+
+        // =========== 👇 新增的代码从这里开始 👇 ===========
       
-      // 7. 【最后一步】把这个新做好的 li，挂到 ul 列表上去
-      list.appendChild(newItem);
+      // 1. 把鼠标变成小手，暗示用户“这里可以点”
+      newItem.style.cursor = "pointer";
+      // 2. 给它加个提示（鼠标悬停时显示）
+      newItem.title = "点击即可删除";
+
+      // 3. 核心魔法：点击时执行删除
+      newItem.onclick = function() {
+        // 弹出一个确认框 (用户选“确定”返回 true，选“取消”返回 false)
+        var result = confirm("你确定完成并删除这个任务了吗？🗑️");
+        
+        // 如果用户点了“确定”
+        if (result === true) {
+          this.remove();  // "this" 指的就是被点击的这个 newItem 自己
+        }
+      };
+    
       
-      // 8. 贴心服务：清空输入框，方便写下一个
-      input.value = "";
-    }
+        // 7. 【最后一步】把这个新做好的 li，挂到 ul 列表上去
+        list.appendChild(newItem);
+        
+        // 8. 贴心服务：清空输入框，方便写下一个
+        input.value = "";
+      }
+    
+
   </script>
 
   </body>
