@@ -1,26 +1,60 @@
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>我的主页</title>
+  
+  <style>
     body {
-      background-color: #f0f0f2; /* 这是一个柔和的灰白色背景 */
-      font-family: sans-serif;   /* 把字体改成现代的无衬线字体 */
-      text-align: center;        /* 把所有内容都居中显示 */
+      background-color: #f0f0f2;
+      font-family: sans-serif;
+      text-align: center;
     }
     img {
-    width: 300px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-    margin-top: 20px; 
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+    button {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff4757;
     }
   </style>
+</head>
 
-<h1>Hello World! 这是我的第一个网页</h1>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/300px-Cat_November_2010-1a.jpg" alt="一只可爱的猫">
-<p>
+<body>
+
+  <h1>Hello World! 这是我的第一个网页</h1>
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/300px-Cat_November_2010-1a.jpg" alt="一只可爱的猫">
+
+  <p>
     <a href="https://zh.wikipedia.org/wiki/猫">点击这里了解更多关于猫咪的知识</a>
   </p>
+
   <h3>我的爱好</h3>
-<ul>
-  <li>写代码 💻</li>
-  <li>看电影 🎬</li>
-  <li>撸猫 🐱</li>
-</ul>
-<button>点赞 👍</button>
+  <ul>
+    <li>写代码 💻</li>
+    <li>看电影 🎬</li>
+    <li>撸猫 🐱</li>
+  </ul>
+
+  <button onclick="sayHello()">点赞 👍</button>
+
+  <script>
+    function sayHello() {
+      alert("喵！🐱 谢谢你的点赞！");
+    }
+  </script>
+
+</body>
+</html>
